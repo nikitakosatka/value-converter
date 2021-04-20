@@ -1,5 +1,15 @@
 body {
-    background-color: #313131;
+    background-color: #262626;
+}
+
+.select {
+    margin: 15px;
+    border-radius: 7px;
+    width: 195px;
+    height: 40px;
+    background-color: #343434;
+    color: white;
+    border-color: white;
 }
 
 .title_text {
