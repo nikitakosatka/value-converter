@@ -6,29 +6,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-            aria-expanded="false">
-        Dropdown button
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-    </ul>
-</div>
-<h3 class="title_text">Температура</h3>
+<select class="form-select" aria-label="Default select example" onload="handleSelect(this.value)" onchange="handleSelect(this.value)">
+    <option selected>Выберите категорию</option>
+    <option value="temperature">Температура</option>
+    <option value="weight">Масса</option>
+    <option value="volume">Объем</option>
+    <option value="speed">Скорость</option>
+    <option value="time">Время</option>
+</select>
+<h3 id="title" class="title_text">Выберите категорию</h3>
 <div class="form-group col-md-3">
-    <label for="usr">Цельсии:</label>
-    <input type="text" class="form-control" id="celcius" onkeyup="celciusToFahrenheit()">
+    <label id="from" for="usr"><br></label>
+    <input type="text" class="form-control" id="fromInput" onkeyup="toSecond()">
 </div>
 
 <div class="form-group col-md-3">
-    <label for="pwd">Фаренгейты:</label>
-    <input type="text" class="form-control" id="fahrenheit" onkeyup="fahrenheitToCelcius()">
+    <label id="to" for="pwd"><br></label>
+    <input type="text" class="form-control" id="toInput" onkeyup="toFirst()">
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
