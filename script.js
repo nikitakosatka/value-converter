@@ -79,25 +79,34 @@ function getTime(func, value) {
     }
 }
 
+
+function checkIfNan(value) {
+    if (isNaN(value)) {
+        return "Введено некорректное значение, введите число"
+    }
+    return value
+}
+
+
 function toSecond() {
     let fromValue = document.getElementById('fromInput').value;
     let title = document.getElementById('title').innerHTML;
 
     switch (title) {
         case "Температура":
-            document.getElementById('toInput').value = getTemperature(toSecond, fromValue);
+            document.getElementById('toInput').value = checkIfNan(getTemperature(toSecond, fromValue));
             break
         case "Масса":
-            document.getElementById('toInput').value = getWeight(toSecond, fromValue);
+            document.getElementById('toInput').value = checkIfNan(getWeight(toSecond, fromValue));
             break
         case "Объём":
-            document.getElementById('toInput').value = getVolume(toSecond, fromValue);
+            document.getElementById('toInput').value = checkIfNan(getVolume(toSecond, fromValue));
             break
         case "Скорость":
-            document.getElementById('toInput').value = getSpeed(toSecond, fromValue);
+            document.getElementById('toInput').value = checkIfNan(getSpeed(toSecond, fromValue));
             break
         case "Время":
-            document.getElementById('toInput').value = getTime(toSecond, fromValue);
+            document.getElementById('toInput').value = checkIfNan(getTime(toSecond, fromValue));
             break
         default:
             break
@@ -110,19 +119,19 @@ function toFirst() {
 
     switch (title) {
         case "Температура":
-            document.getElementById('fromInput').value = getTemperature(toFirst, fromValue);
+            document.getElementById('fromInput').value = checkIfNan(getTemperature(toFirst, fromValue));
             break
         case "Масса":
-            document.getElementById('fromInput').value = getWeight(toFirst, fromValue);
+            document.getElementById('fromInput').value = checkIfNan(getWeight(toFirst, fromValue));
             break
         case "Объём":
-            document.getElementById('fromInput').value = getVolume(toFirst, fromValue);
+            document.getElementById('fromInput').value = checkIfNan(getVolume(toFirst, fromValue));
             break
         case "Скорость":
-            document.getElementById('fromInput').value = getSpeed(toFirst, fromValue);
+            document.getElementById('fromInput').value = checkIfNan(getSpeed(toFirst, fromValue));
             break
         case "Время":
-            document.getElementById('fromInput').value = getTime(toFirst, fromValue);
+            document.getElementById('fromInput').value = checkIfNan(getTime(toFirst, fromValue));
             break
         default:
             break
